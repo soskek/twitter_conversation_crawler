@@ -15,15 +15,21 @@ export BEARER_TOKEN='_____YOUR_BEARER_TOKEN_HERE_____'
 python -u search.py > tweets.jsonl
 ```
 
+Keep the script running for crawling.
+Each line is the json of a crawled result based on conversation_id.
+
 
 ## Extract Conversation Chains
+
+After some crawling, you can extract the data as conversational chain.
+Each line is the json of a list of tweet dicts.
 
 ```
 python process.py < tweets.jsonl > convs.jsonl
 ```
 
 
-### Velocity
+## Velocity of Crawling
 
 - The twitter API has a MONTHLY TWEET CAP USAGE (typically, 500000/month).
   - You can check the remaining MONTHLY TWEET CAP USAGE on the [Dashboard](https://developer.twitter.com/en/portal/dashboard).
