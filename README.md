@@ -29,20 +29,9 @@ python process.py < tweets.jsonl > convs.jsonl
 ```
 
 
-## Velocity of Crawling
+## Data Examples
 
-- The twitter API has a MONTHLY TWEET CAP USAGE (typically, 500000/month).
-  - You can check the remaining MONTHLY TWEET CAP USAGE on the [Dashboard](https://developer.twitter.com/en/portal/dashboard).
-  - (And also, it has the caps of the number of requests per 15-minute. See [the doc](https://developer.twitter.com/en/docs/twitter-api/rate-limits).)
-- One loop usually accesses around 100 tweets with variances.
-- So, we can run 7 loops per hour at maximum (500000/30/24/100 = 6.94...).
-- The default velocity is set as 5 loops per hour (12 min interval). If you wanna change, modify `search.py`.
-
-
-
-## Data examples
-
-#### a line of `tweets.jsonl`
+#### a line of `tweets.jsonl` (from `search.py`)
 
 ```
 {
@@ -116,7 +105,7 @@ python process.py < tweets.jsonl > convs.jsonl
 }
 ```
 
-#### a line of `convs.jsonl`
+#### a line of `convs.jsonl` (from `process.py`)
 
 ```
 [
@@ -137,3 +126,13 @@ python process.py < tweets.jsonl > convs.jsonl
   ...
 ]
 ```
+
+
+## Velocity of Crawling
+
+- The twitter API has a MONTHLY TWEET CAP USAGE (typically, 500000/month).
+  - You can check the remaining MONTHLY TWEET CAP USAGE on the [Dashboard](https://developer.twitter.com/en/portal/dashboard).
+  - (And also, it has the caps of the number of requests per 15-minute. See [the doc](https://developer.twitter.com/en/docs/twitter-api/rate-limits).)
+- One loop usually accesses around 100 tweets with variances.
+- So, we can run 7 loops per hour at maximum (500000/30/24/100 = 6.94...).
+- The default velocity is set as 5 loops per hour (12 min interval). If you wanna change, modify `search.py`.
