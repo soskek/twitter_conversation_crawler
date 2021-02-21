@@ -25,7 +25,7 @@ After some crawling, you can extract the data as conversational chain.
 Each line is the json of a list of tweet dicts.
 
 ```
-python process.py < tweets.jsonl > convs.jsonl
+python extract.py < tweets.jsonl > convs.jsonl
 ```
 
 
@@ -105,7 +105,7 @@ python process.py < tweets.jsonl > convs.jsonl
 }
 ```
 
-#### a line of `convs.jsonl` (from `process.py`)
+#### a line of `convs.jsonl` (from `extract.py`)
 
 ```
 [
